@@ -1,3 +1,17 @@
-<h1>
-  {{title}}
-</h1>
+<h1>Super Game</h1>
+<div>Shapes Amount: {{shapesAmount}}</div>
+<div>Surface Area: {{surfaceArea}}</div>
+<app-pixi-field
+    (shapesAmount)="onShapesAmount($event)"
+    [gravityValue]="gravityValue"
+    [shapesPerSecond]="shapesPerSecond">
+</app-pixi-field>
+<div>
+    <button (click)="decreaseShapes()">- Shapes/second</button>
+    {{shapesPerSecond}}
+    <button (click)="increaseShapes()">+ Shapes/second</button>
+    <button (click)="decreaseGravity()">- Gravity</button>
+    {{gravityValue}}
+    <button (click)="increaseGravity()">+ Gravity</button>
+</div>
+
